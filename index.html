@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>LuizinTWS Editor</title>
-<meta name="description" content="Portfólio de edição de vídeo do LuizinTWS: vídeos curtos e vídeos longos para YouTube.">
+<meta name="description" content="Sou o LuizinTWS e edito vídeos curtos e vídeos longos pra YouTube. Dá o play e conhece meu trabalho.">
 <link rel="icon" type="image/png" href="img/favicon.png" id="favicon">
 <link rel="apple-touch-icon" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,18 +85,25 @@ section.faixa{padding:clamp(72px,11vh,130px) var(--lado)}
 .abas button{font:400 1.05rem/1 var(--titulo);letter-spacing:.04em;background:none;color:var(--creme);border:0;border-radius:999px;padding:.8em 1.3em .6em}
 .abas button[aria-selected="true"]{background:var(--acento);color:var(--escuro)}
 button{cursor:pointer}
-.curtos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;max-width:1240px;margin:0 auto}
-.curto{display:flex;flex-direction:column;align-items:center;gap:12px}
-.tela{position:relative;display:block;width:100%;aspect-ratio:9/16;border:3px solid var(--marrom);border-radius:18px;overflow:hidden;background:var(--marrom);padding:0;transition:transform .15s,border-color .15s}
-.tela:hover,.tela.com-som{border-color:var(--acento);transform:translateY(-5px)}
+section.faixa.trabalhos{padding-inline:max(clamp(14px,2.6vw,48px),env(safe-area-inset-left,0px))}
+.curtos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.35vw,24px);max-width:1664px;margin:0 auto}
+.tela{position:relative;display:block;width:100%;aspect-ratio:9/16;border:0;border-radius:10px;overflow:hidden;background:var(--marrom);padding:0;transition:transform .2s ease,box-shadow .2s ease}
+.tela:hover{transform:scale(1.022);z-index:1;box-shadow:0 12px 30px rgba(0,0,0,.45)}
+.tela.com-som{box-shadow:0 0 0 3px var(--acento)}
 .tela video{width:100%;height:100%;object-fit:cover;display:block}
-.som{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);white-space:nowrap;font:400 .9rem/1 var(--titulo);letter-spacing:.04em;background:var(--escuro);color:var(--creme);border-radius:999px;padding:.7em 1em .5em}
+.som{position:absolute;right:10px;bottom:10px;display:flex;align-items:center;gap:.5em;white-space:nowrap;font:400 .9rem/1 var(--titulo);letter-spacing:.04em;background:color-mix(in srgb,var(--escuro) 78%,transparent);color:var(--creme);border-radius:999px;padding:.65em .95em;transition:opacity .2s}
+.som svg{width:1.25em;height:1.1em}
+.som-texto{padding-top:.2em}
+.som .ligado,.com-som .som .mudo{display:none}
+.com-som .som .ligado{display:block}
 .com-som .som{background:var(--amarelo);color:var(--escuro)}
-.curto h3,.longo h3{font-size:1.35rem;line-height:1.2}
+/* com mouse, o botão só aparece ao passar por cima */
+@media (hover:hover){.som{opacity:0}.tela:hover .som,.tela:focus-visible .som{opacity:1}}
+.longo h3{font-size:1.35rem;line-height:1.2}
 .longos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 24px;max-width:1100px;margin:0 auto;text-align:left}
 .longo:first-child{grid-column:1/-1}
 .longo:first-child h3{font-size:clamp(1.5rem,3.4vw,2.4rem)}
-.quadro{position:relative;display:grid;place-items:center;aspect-ratio:16/9;border:3px solid var(--marrom);border-radius:18px;overflow:hidden;background:repeating-linear-gradient(100deg,var(--quadro-1) 0 34px,var(--quadro-2) 34px 58px);text-decoration:none;transition:transform .15s,border-color .15s}
+.quadro{position:relative;display:grid;place-items:center;aspect-ratio:16/9;border:3px solid var(--marrom);border-radius:10px;overflow:hidden;background:repeating-linear-gradient(100deg,var(--quadro-1) 0 34px,var(--quadro-2) 34px 58px);text-decoration:none;transition:transform .15s,border-color .15s}
 a.quadro:hover{border-color:var(--acento);transform:translateY(-5px)}
 .quadro img,.quadro iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
 .tocar{position:relative;z-index:1;width:74px;height:74px;border-radius:50%;background:var(--acento);border:3px solid var(--escuro);box-shadow:0 5px 0 var(--escuro)}
@@ -118,8 +125,8 @@ a.quadro:hover{border-color:var(--acento);transform:translateY(-5px)}
 .redes{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:32px}
 footer{padding:22px var(--lado) calc(22px + env(safe-area-inset-bottom,0px));text-align:center;font-size:.85rem;color:var(--rodape-texto);border-top:3px solid var(--marrom)}
 
-@media (max-width:900px){.curtos{grid-template-columns:repeat(2,minmax(0,1fr));max-width:620px}.sobre-grade{grid-template-columns:1fr}}
-@media (max-width:600px){.longos{grid-template-columns:1fr}.curtos{gap:14px}.curto h3{font-size:1.1rem}nav a{font-size:.9rem;padding:.7em .75em .5em}}
+@media (max-width:900px){.curtos{grid-template-columns:repeat(2,minmax(0,1fr));max-width:700px}.sobre-grade{grid-template-columns:1fr}}
+@media (max-width:600px){.longos{grid-template-columns:1fr}.som{font-size:.8rem;right:8px;bottom:8px}nav a{font-size:.9rem;padding:.7em .75em .5em}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -145,20 +152,20 @@ footer{padding:22px var(--lado) calc(22px + env(safe-area-inset-bottom,0px));tex
 <section class="faixa sobre" id="sobre">
   <div class="sobre-grade">
     <div>
-      <h2>Edição que <span class="destaque">segura o play</span></h2>
-      <p>Eu sou o LuizinTWS e edito vídeo para quem cria conteúdo. Meu trabalho é cortar o que sobra, destacar a reação na hora certa e deixar cada cena fácil de acompanhar.</p>
-      <p>Aqui você encontra reacts em formato vertical e vídeos longos de games como Fisch e Cobblemon.</p>
-      <a class="botao" href="#contato">Começar um projeto</a>
+      <h2>Vídeo bom não tem <span class="destaque">parte chata</span></h2>
+      <p>Fala! Eu sou o LuizinTWS e edito pra quem cria conteúdo. Sabe aquele trecho arrastado que dá vontade de pular? Eu corto. E quando sai uma reação boa, ela ganha o destaque que merece.</p>
+      <p>Aqui embaixo tem vídeo na vertical (short form) e vídeo longo de jogos. Assiste e vê se o meu estilo combina com o seu.</p>
+      <a class="botao" href="#contato">Me chama pra editar</a>
     </div>
     <ul class="formatos">
-      <li><h3>Vídeos curtos</h3><p>Formato vertical, com legendas na tela, zooms e a câmera junto da gameplay.</p></li>
-      <li><h3>Vídeos longos</h3><p>Vídeos para YouTube, de gameplay a talking head.</p></li>
+      <li><h3>Vídeos curtos</h3><p>Na vertical, com legenda, zoom na hora certa e a câmera junto da gameplay pra ninguém perder a reação.</p></li>
+      <li><h3>Vídeos longos</h3><p>De gameplay a papo reto com a câmera, com ritmo pra dar vontade de ver até o fim.</p></li>
     </ul>
   </div>
 </section>
 
 <section class="faixa trabalhos" id="trabalhos">
-  <h2>Trabalhos</h2>
+  <h2>Dá o play</h2>
   <div class="abas" role="tablist" aria-label="Formato dos vídeos">
     <button type="button" role="tab" id="aba-curtos" aria-controls="painel-curtos" aria-selected="true">Vídeos curtos</button>
     <button type="button" role="tab" id="aba-longos" aria-controls="painel-longos" aria-selected="false">Vídeos longos</button>
@@ -167,30 +174,26 @@ footer{padding:22px var(--lado) calc(22px + env(safe-area-inset-bottom,0px));tex
     <article class="curto">
       <button type="button" class="tela" aria-pressed="false" aria-label="Som do vídeo Haikyuu">
         <video src="videos/haikyuu.mp4" poster="videos/haikyuu.jpg" muted loop playsinline preload="none"></video>
-        <span class="som">Ouvir</span>
+        <span class="som"><svg class="mudo" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M48 352l48 0 134.1 119.2c6.4 5.7 14.6 8.8 23.1 8.8 19.2 0 34.8-15.6 34.8-34.8l0-378.4c0-19.2-15.6-34.8-34.8-34.8-8.5 0-16.7 3.1-23.1 8.8L96 160 48 160c-26.5 0-48 21.5-48 48l0 96c0 26.5 21.5 48 48 48zM367 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"/></svg><svg class="ligado" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M533.6 32.5c-10.3-8.4-25.4-6.8-33.8 3.5s-6.8 25.4 3.5 33.8C557.5 113.8 592 180.8 592 256s-34.5 142.2-88.7 186.3c-10.3 8.4-11.8 23.5-3.5 33.8s23.5 11.8 33.8 3.5C598.5 426.7 640 346.2 640 256S598.5 85.2 533.6 32.5zM473.1 107c-10.3-8.4-25.4-6.8-33.8 3.5s-6.8 25.4 3.5 33.8C475.3 170.7 496 210.9 496 256s-20.7 85.3-53.2 111.8c-10.3 8.4-11.8 23.5-3.5 33.8s23.5 11.8 33.8 3.5c43.2-35.2 70.9-88.9 70.9-149s-27.7-113.8-70.9-149zm-60.5 74.5c-10.3-8.4-25.4-6.8-33.8 3.5s-6.8 25.4 3.5 33.8C393.1 227.6 400 241 400 256s-6.9 28.4-17.7 37.3c-10.3 8.4-11.8 23.5-3.5 33.8s23.5 11.8 33.8 3.5C434.1 312.9 448 286.1 448 256s-13.9-56.9-35.4-74.5zM80 352l48 0 134.1 119.2c6.4 5.7 14.6 8.8 23.1 8.8 19.2 0 34.8-15.6 34.8-34.8l0-378.4c0-19.2-15.6-34.8-34.8-34.8-8.5 0-16.7 3.1-23.1 8.8L128 160 80 160c-26.5 0-48 21.5-48 48l0 96c0 26.5 21.5 48 48 48z"/></svg><span class="som-texto">Ouvir</span></span>
       </button>
-      <h3>Haikyuu</h3>
     </article>
     <article class="curto">
       <button type="button" class="tela" aria-pressed="false" aria-label="Som do vídeo Mandy">
         <video src="videos/mandy.mp4" poster="videos/mandy.jpg" muted loop playsinline preload="none"></video>
-        <span class="som">Ouvir</span>
+        <span class="som"><svg class="mudo" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M48 352l48 0 134.1 119.2c6.4 5.7 14.6 8.8 23.1 8.8 19.2 0 34.8-15.6 34.8-34.8l0-378.4c0-19.2-15.6-34.8-34.8-34.8-8.5 0-16.7 3.1-23.1 8.8L96 160 48 160c-26.5 0-48 21.5-48 48l0 96c0 26.5 21.5 48 48 48zM367 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"/></svg><svg class="ligado" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M533.6 32.5c-10.3-8.4-25.4-6.8-33.8 3.5s-6.8 25.4 3.5 33.8C557.5 113.8 592 180.8 592 256s-34.5 142.2-88.7 186.3c-10.3 8.4-11.8 23.5-3.5 33.8s23.5 11.8 33.8 3.5C598.5 426.7 640 346.2 640 256S598.5 85.2 533.6 32.5zM473.1 107c-10.3-8.4-25.4-6.8-33.8 3.5s-6.8 25.4 3.5 33.8C475.3 170.7 496 210.9 496 256s-20.7 85.3-53.2 111.8c-10.3 8.4-11.8 23.5-3.5 33.8s23.5 11.8 33.8 3.5c43.2-35.2 70.9-88.9 70.9-149s-27.7-113.8-70.9-149zm-60.5 74.5c-10.3-8.4-25.4-6.8-33.8 3.5s-6.8 25.4 3.5 33.8C393.1 227.6 400 241 400 256s-6.9 28.4-17.7 37.3c-10.3 8.4-11.8 23.5-3.5 33.8s23.5 11.8 33.8 3.5C434.1 312.9 448 286.1 448 256s-13.9-56.9-35.4-74.5zM80 352l48 0 134.1 119.2c6.4 5.7 14.6 8.8 23.1 8.8 19.2 0 34.8-15.6 34.8-34.8l0-378.4c0-19.2-15.6-34.8-34.8-34.8-8.5 0-16.7 3.1-23.1 8.8L128 160 80 160c-26.5 0-48 21.5-48 48l0 96c0 26.5 21.5 48 48 48z"/></svg><span class="som-texto">Ouvir</span></span>
       </button>
-      <h3>Mandy</h3>
     </article>
     <article class="curto">
       <button type="button" class="tela" aria-pressed="false" aria-label="Som do vídeo Anitta">
         <video src="videos/anitta.mp4" poster="videos/anitta.jpg" muted loop playsinline preload="none"></video>
-        <span class="som">Ouvir</span>
+        <span class="som"><svg class="mudo" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M48 352l48 0 134.1 119.2c6.4 5.7 14.6 8.8 23.1 8.8 19.2 0 34.8-15.6 34.8-34.8l0-378.4c0-19.2-15.6-34.8-34.8-34.8-8.5 0-16.7 3.1-23.1 8.8L96 160 48 160c-26.5 0-48 21.5-48 48l0 96c0 26.5 21.5 48 48 48zM367 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"/></svg><svg class="ligado" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M533.6 32.5c-10.3-8.4-25.4-6.8-33.8 3.5s-6.8 25.4 3.5 33.8C557.5 113.8 592 180.8 592 256s-34.5 142.2-88.7 186.3c-10.3 8.4-11.8 23.5-3.5 33.8s23.5 11.8 33.8 3.5C598.5 426.7 640 346.2 640 256S598.5 85.2 533.6 32.5zM473.1 107c-10.3-8.4-25.4-6.8-33.8 3.5s-6.8 25.4 3.5 33.8C475.3 170.7 496 210.9 496 256s-20.7 85.3-53.2 111.8c-10.3 8.4-11.8 23.5-3.5 33.8s23.5 11.8 33.8 3.5c43.2-35.2 70.9-88.9 70.9-149s-27.7-113.8-70.9-149zm-60.5 74.5c-10.3-8.4-25.4-6.8-33.8 3.5s-6.8 25.4 3.5 33.8C393.1 227.6 400 241 400 256s-6.9 28.4-17.7 37.3c-10.3 8.4-11.8 23.5-3.5 33.8s23.5 11.8 33.8 3.5C434.1 312.9 448 286.1 448 256s-13.9-56.9-35.4-74.5zM80 352l48 0 134.1 119.2c6.4 5.7 14.6 8.8 23.1 8.8 19.2 0 34.8-15.6 34.8-34.8l0-378.4c0-19.2-15.6-34.8-34.8-34.8-8.5 0-16.7 3.1-23.1 8.8L128 160 80 160c-26.5 0-48 21.5-48 48l0 96c0 26.5 21.5 48 48 48z"/></svg><span class="som-texto">Ouvir</span></span>
       </button>
-      <h3>Anitta</h3>
     </article>
     <article class="curto">
       <button type="button" class="tela" aria-pressed="false" aria-label="Som do vídeo Olha ali">
         <video src="videos/olha-ali.mp4" poster="videos/olha-ali.jpg" muted loop playsinline preload="none"></video>
-        <span class="som">Ouvir</span>
+        <span class="som"><svg class="mudo" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M48 352l48 0 134.1 119.2c6.4 5.7 14.6 8.8 23.1 8.8 19.2 0 34.8-15.6 34.8-34.8l0-378.4c0-19.2-15.6-34.8-34.8-34.8-8.5 0-16.7 3.1-23.1 8.8L96 160 48 160c-26.5 0-48 21.5-48 48l0 96c0 26.5 21.5 48 48 48zM367 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"/></svg><svg class="ligado" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M533.6 32.5c-10.3-8.4-25.4-6.8-33.8 3.5s-6.8 25.4 3.5 33.8C557.5 113.8 592 180.8 592 256s-34.5 142.2-88.7 186.3c-10.3 8.4-11.8 23.5-3.5 33.8s23.5 11.8 33.8 3.5C598.5 426.7 640 346.2 640 256S598.5 85.2 533.6 32.5zM473.1 107c-10.3-8.4-25.4-6.8-33.8 3.5s-6.8 25.4 3.5 33.8C475.3 170.7 496 210.9 496 256s-20.7 85.3-53.2 111.8c-10.3 8.4-11.8 23.5-3.5 33.8s23.5 11.8 33.8 3.5c43.2-35.2 70.9-88.9 70.9-149s-27.7-113.8-70.9-149zm-60.5 74.5c-10.3-8.4-25.4-6.8-33.8 3.5s-6.8 25.4 3.5 33.8C393.1 227.6 400 241 400 256s-6.9 28.4-17.7 37.3c-10.3 8.4-11.8 23.5-3.5 33.8s23.5 11.8 33.8 3.5C434.1 312.9 448 286.1 448 256s-13.9-56.9-35.4-74.5zM80 352l48 0 134.1 119.2c6.4 5.7 14.6 8.8 23.1 8.8 19.2 0 34.8-15.6 34.8-34.8l0-378.4c0-19.2-15.6-34.8-34.8-34.8-8.5 0-16.7 3.1-23.1 8.8L128 160 80 160c-26.5 0-48 21.5-48 48l0 96c0 26.5 21.5 48 48 48z"/></svg><span class="som-texto">Ouvir</span></span>
       </button>
-      <h3>Olha ali</h3>
     </article>
   </div>
   <div id="painel-longos" role="tabpanel" aria-labelledby="aba-longos" hidden>
@@ -231,7 +234,7 @@ footer{padding:22px var(--lado) calc(22px + env(safe-area-inset-bottom,0px));tex
         <h3>Montando o time perfeito no Cobblemon!</h3>
       </article>
     </div>
-    <a class="botao canal" href="https://www.youtube.com/@luizintws" target="_blank" rel="noopener">Ver o canal no YouTube</a>
+    <a class="botao canal" href="https://www.youtube.com/@luizintws" target="_blank" rel="noopener">Tem mais no meu canal</a>
   </div>
 </section>
 
@@ -239,7 +242,7 @@ footer{padding:22px var(--lado) calc(22px + env(safe-area-inset-bottom,0px));tex
   <canvas class="listras" data-tema="escuro" aria-hidden="true"></canvas>
   <div>
     <h2>Bora <span class="destaque">editar?</span></h2>
-    <p>Tem um vídeo para tirar do papel? Fala comigo.</p>
+    <p>Tem vídeo parado aí esperando edição? Me chama e a gente troca uma ideia.</p>
     <ul class="dados" id="dados"></ul>
     <div class="redes" id="redes">
       <a class="botao" href="https://www.youtube.com/@luizintws" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.7 124.1C543.5 100.4 524.9 81.8 501.4 75.5 458.9 64 288.1 64 288.1 64S117.3 64 74.7 75.5C51.2 81.8 32.7 100.4 26.4 124.1 15 167 15 256.4 15 256.4s0 89.4 11.4 132.3c6.3 23.6 24.8 41.5 48.3 47.8 42.6 11.5 213.4 11.5 213.4 11.5s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.2 337.6l0-162.4 142.7 81.2-142.7 81.2z"/></svg>YouTube</a>
@@ -248,7 +251,7 @@ footer{padding:22px var(--lado) calc(22px + env(safe-area-inset-bottom,0px));tex
 </section>
 </main>
 
-<footer><span>LuizinTWS Editor. Cursores por Virum64.</span></footer>
+<footer><span>STAY STRONG! ❤️</span></footer>
 
 <script>
 /* ===== PREENCHA SEUS CONTATOS AQUI (o que ficar vazio não aparece) ===== */
@@ -360,7 +363,7 @@ const telas = [...document.querySelectorAll(".tela")];
 function rotulo(b, ligado) {
   b.classList.toggle("com-som", ligado);
   b.setAttribute("aria-pressed", ligado);
-  b.querySelector(".som").textContent = ligado ? "Desligar som" : "Ouvir";
+  b.querySelector(".som-texto").textContent = ligado ? "Desligar som" : "Ouvir";
 }
 function silenciar(b) { b.querySelector("video").muted = true; rotulo(b, false); }
 const olho = new IntersectionObserver(itens => itens.forEach(e => {
@@ -448,7 +451,7 @@ if (CONTATOS.email) {
   const { li, dado } = item("E-mail", CONTATOS.email);
   const botao = Object.assign(document.createElement("button"), { type: "button", className: "acao", textContent: "Copiar" });
   botao.setAttribute("aria-label", "Copiar e-mail");
-  botao.addEventListener("click", async () => avisarNoBotao(botao, await copiarTexto(CONTATOS.email, dado) ? "Copiado" : "Selecionado", "Copiar"));
+  botao.addEventListener("click", async () => avisarNoBotao(botao, await copiarTexto(CONTATOS.email, dado) ? "Copiado!" : "Selecionado", "Copiar"));
   li.appendChild(botao);
 }
 if (CONTATOS.discord) {
@@ -460,20 +463,20 @@ if (CONTATOS.discord) {
   });
   li.appendChild(link);
   if (!temId) {
-    const aviso = Object.assign(document.createElement("small"), { textContent: "Clique em Adicionar e cole meu nome em \"Adicionar amigo\" no Discord." });
+    const aviso = Object.assign(document.createElement("small"), { textContent: "Clica em Adicionar pra copiar meu nome e cola em \"Adicionar amigo\" no Discord." });
     aviso.setAttribute("role", "status");
     li.appendChild(aviso);
     link.addEventListener("click", async () => {
       aviso.textContent = await copiarTexto(CONTATOS.discord, dado)
-        ? "Nome copiado. No Discord, abra \"Adicionar amigo\" e cole."
-        : "Copie o nome acima e cole em \"Adicionar amigo\" no Discord.";
+        ? "Copiei! Agora é só colar em \"Adicionar amigo\" no Discord."
+        : "Não deu pra copiar. Copia o nome ali em cima e cola em \"Adicionar amigo\".";
     });
   }
 }
 
 /* Aba piscando quando a pessoa sai da janela */
 (() => {
-  const titulos = ["👀 Volta aqui!", "🎬 Bora editar?"];
+  const titulos = ["Volta aqui!", "Bora editar?"];
   const icones = ["img/favicon-alerta.png", "img/favicon.png"];
   const original = document.title, favicon = document.getElementById("favicon");
   let vez = 0, piscando = false;
