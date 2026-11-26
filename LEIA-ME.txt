@@ -1,0 +1,5 @@
+LuizinTWS Editor
+
+Publicar na Vercel: envie esta pasta (index.html + img + videos) como um projeto estático, sem build.
+Contatos: abra index.html e preencha o bloco CONTATOS perto do final.
+Textos e títulos: edite direto no index.html.
