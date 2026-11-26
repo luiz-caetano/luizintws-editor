@@ -70,15 +70,16 @@ nav a:hover{background:var(--acento);color:var(--escuro)}
 
 section.faixa{padding:clamp(72px,11vh,130px) var(--lado)}
 .sobre{background:var(--marrom)}
-.sobre-grade{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(36px,6vw,100px);align-items:center;max-width:1240px;margin:0 auto}
-.sobre-grade>*{min-width:0}
+.sobre-centro{max-width:760px;margin:0 auto;text-align:center}
+.sobre h2{margin-inline:auto}
 .destaque{display:block;color:var(--acento)}
-.sobre p{max-width:52ch;margin-top:20px}
-.sobre .botao{margin-top:34px}
-.formatos{list-style:none;display:grid;gap:18px}
-.formatos li{background:var(--escuro);border:3px solid var(--laranja);border-radius:20px;padding:24px 26px}
-.formatos h3{font-size:1.9rem;color:var(--amarelo)}
-.formatos p{margin-top:6px}
+.sobre p{max-width:56ch;margin:20px auto 0}
+.sobre h3{font-size:1.7rem;color:var(--amarelo);width:fit-content;margin:44px auto 0}
+.stack{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,128px));justify-content:center;gap:14px;margin-top:18px}
+.stack li{display:flex;flex-direction:column;align-items:center;gap:10px;background:var(--escuro);border:3px solid var(--laranja);border-radius:14px;padding:18px 8px 14px}
+.stack svg{width:48px;height:48px;color:var(--creme)}
+.stack span{font:800 .85rem/1.25 var(--texto);min-height:2.5em;display:grid;place-items:center}
+.sobre .botao{margin-top:38px}
 
 .trabalhos{background:var(--escuro);text-align:center}
 .abas{display:inline-flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:30px 0 44px;background:var(--marrom);padding:6px;border-radius:999px}
@@ -125,7 +126,7 @@ a.quadro:hover{border-color:var(--acento);transform:translateY(-5px)}
 .redes{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:32px}
 footer{padding:22px var(--lado) calc(22px + env(safe-area-inset-bottom,0px));text-align:center;font-size:.85rem;color:var(--rodape-texto);border-top:3px solid var(--marrom)}
 
-@media (max-width:900px){.curtos{grid-template-columns:repeat(2,minmax(0,1fr));max-width:700px}.sobre-grade{grid-template-columns:1fr}}
+@media (max-width:900px){.curtos{grid-template-columns:repeat(2,minmax(0,1fr));max-width:700px}}
 @media (max-width:600px){.longos{grid-template-columns:1fr}.som{font-size:.8rem;right:8px;bottom:8px}nav a{font-size:.9rem;padding:.7em .75em .5em}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 </style>
@@ -144,23 +145,24 @@ footer{padding:22px var(--lado) calc(22px + env(safe-area-inset-bottom,0px));tex
   <div class="marca">
     <img class="icone" src="img/icone.jpg" alt="Ícone do LuizinTWS" width="480" height="480">
     <h1><span class="nome">LuizinTWS</span> <span class="cargo">Editor</span></h1>
-    <a class="botao" href="#trabalhos">Ver trabalhos</a>
+    <a class="botao" href="#trabalhos">ver trabalhos</a>
   </div>
 </header>
 
 <main>
 <section class="faixa sobre" id="sobre">
-  <div class="sobre-grade">
-    <div>
-      <h2>Vídeo bom não tem <span class="destaque">parte chata</span></h2>
-      <p>Fala! Eu sou o LuizinTWS e edito pra quem cria conteúdo. Sabe aquele trecho arrastado que dá vontade de pular? Eu corto. E quando sai uma reação boa, ela ganha o destaque que merece.</p>
-      <p>Aqui embaixo tem vídeo na vertical (short form) e vídeo longo de jogos. Assiste e vê se o meu estilo combina com o seu.</p>
-      <a class="botao" href="#contato">Me chama pra editar</a>
-    </div>
-    <ul class="formatos">
-      <li><h3>Vídeos curtos</h3><p>Na vertical, com legenda, zoom na hora certa e a câmera junto da gameplay pra ninguém perder a reação.</p></li>
-      <li><h3>Vídeos longos</h3><p>De gameplay a papo reto com a câmera, com ritmo pra dar vontade de ver até o fim.</p></li>
+  <div class="sobre-centro">
+    <h2>Vídeo bom não tem <span class="destaque">parte chata</span></h2>
+    <p>Fala! Eu sou o LuizinTWS e edito pra quem cria conteúdo. Sabe aquele trecho arrastado que dá vontade de pular? Eu corto. E quando sai uma reação boa, ela ganha o destaque que merece.</p>
+    <p>Aqui embaixo tem vídeo na vertical (short form) e vídeo longo de jogos. Assiste e vê se o meu estilo combina com o seu.</p>
+    <h3>Minha stack</h3>
+    <!-- Ícones: Tabler Icons (MIT) e Simple Icons (CC0) -->
+    <ul class="stack">
+      <li><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3 12c0 -4.243 0 -6.364 1.318 -7.682s3.44 -1.318 7.682 -1.318s6.364 0 7.682 1.318s1.318 3.44 1.318 7.682s0 6.364 -1.318 7.682s-3.44 1.318 -7.682 1.318s-6.364 0 -7.682 -1.318s-1.318 -3.44 -1.318 -7.682"></path><path d="M7.263 15.79v-3.79m0 0v-3.248c0 -.335 .222 -.541 .542 -.541h1.353a1.895 1.895 0 1 1 0 3.789l-1.895 0"></path><path d="M13.895 10.579v1.895m0 0v3.315m0 -3.315c.531 -.709 1.026 -1.592 1.894 -1.832q .22 -.062 .474 -.063"></path></svg><span>Premiere Pro</span></li>
+      <li><svg stroke="currentColor" fill="currentColor" stroke-width="0" role="img" viewBox="0 0 24 24" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M17.621 0 5.977.004c-1.37 0-2.756.345-3.762 1.11a4.925 4.925 0 0 0-1.61 2.003C.233 3.93 0 5.02 0 5.951l.012 12.2c.002 1.604.479 3.057 1.461 4.112.984 1.056 2.462 1.683 4.331 1.691L16.856 24c1.26.005 3.095-.036 4.303-.714 1.075-.605 2.025-1.556 2.497-2.984.278-.84.345-2.084.344-3.147l-.021-11.13c-.002-.888-.15-2.023-.547-2.934-.425-.976-1.181-1.815-2.322-2.425C20.353.26 19.123 0 17.622 0zm0 .93c1.378 0 2.538.295 3.04.565.977.523 1.544 1.166 1.889 1.96.315.721.47 1.793.473 2.572l.018 11.13c.002 1.013-.097 2.257-.298 2.86-.396 1.202-1.146 1.946-2.063 2.462-.814.457-2.612.593-3.82.588l-11.05-.044c-1.657-.007-2.832-.534-3.626-1.386-.792-.851-1.212-2.06-1.212-3.485L.999 5.95c0-.829.196-1.827.474-2.437.345-.757.75-1.207 1.365-1.674C3.585 1.27 4.868.97 6.08.97zm-5.66 3.423c-1.976.089-3.204 1.658-3.214 3.29.019 1.443 1.635 3.481 2.884 4.53.12.099.154.109.33.18.062.025.198-.047.327-.135.36-.245.993-.947 1.648-1.738a7.67 7.67 0 0 0 1.031-1.683c.409-.89.261-1.599.235-1.888a3.983 3.983 0 0 0-.99-1.692 3.36 3.36 0 0 0-2.251-.864zm4.172 7.922a10.185 10.185 0 0 0-3.244.61c-.15.058-.26.1-.374.17-.057.036-.11.135-.105.292.017.433.29 1.278.624 2.27.384 1.135 1.066 2.27 1.844 2.74a3.23 3.23 0 0 0 2.53.342c.832-.243 1.595-.868 1.962-1.546.986-1.818.19-3.548-1.121-4.417-.447-.296-1.133-.445-1.89-.46-.074 0-.15-.002-.226-.001zm-8.432.038a6.201 6.201 0 0 0-.752.047c-.596.078-.932.273-1.29.51a3.177 3.177 0 0 0-1.365 1.979c-.075.552-.086 1.053.033 1.507.433 1.389 1.326 2.222 2.847 2.452.636.028 1.37-.063 1.99-.45 1.269-.782 2.08-3.17 2.412-4.742.053-.176.035-.357-.013-.42-.005-.067-.044-.113-.19-.183-.398-.192-1.32-.417-2.375-.6a7.68 7.68 0 0 0-1.297-.1z"></path></svg><span>DaVinci Resolve</span></li>
+      <li><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3 12c0 -4.243 0 -6.364 1.318 -7.682s3.44 -1.318 7.682 -1.318s6.364 0 7.682 1.318s1.318 3.44 1.318 7.682s0 6.364 -1.318 7.682s-3.44 1.318 -7.682 1.318s-6.364 0 -7.682 -1.318s-1.318 -3.44 -1.318 -7.682"></path><path d="M6.79 15.79v-3.79m0 0v-2.724c0 -.11 0 -.165 .004 -.211c.044 -.45 .4 -.806 .85 -.85c.046 -.004 .101 -.004 .211 -.004h1.303a1.895 1.895 0 1 1 0 3.789l-2.368 0"></path><path d="M17.178 11.263c-.164 -.659 -.935 -1.158 -1.862 -1.158c-1.047 0 -1.895 .637 -1.895 1.421c0 .785 .848 1.421 1.895 1.421c1.046 0 1.895 .637 1.895 1.421c0 .785 -.849 1.421 -1.895 1.421c-.93 0 -1.704 -.502 -1.864 -1.165"></path></svg><span>Photoshop</span></li>
     </ul>
+    <a class="botao" href="#contato">Me chama pra editar</a>
   </div>
 </section>
 
@@ -276,7 +278,7 @@ const semMovimento = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const alvos = {
     arrow:   ["html", "auto"],
     pointer: ["a[href],button,[role=tab]", "pointer"],
-    text:    ["p,h1,h2,h3,footer span,.dado", "text"],
+    text:    ["p,h1,h2,h3,footer span,.dado,.stack span", "text"],
     wait:    [".carregando,.carregando *", "progress"]
   };
   for (const [nome, [seletor, reserva]] of Object.entries(alvos)) {
